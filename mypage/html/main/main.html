@@ -15,13 +15,18 @@
 			.fle{
 				display: flex;
 				align-items: center;
-				padding:0.8rem 0.6rem;
+				padding:0 0.6rem;
 				font-size: 0.8rem;
 				color: #333;
 			}
+			.bottom .fle div{
+				margin: .4rem;
+			}
+			.two{
+				text-align: center;
+			}
 			.fle div{
 				flex: 1;
-				margin: 0 0.2rem;
 			}
 			.fle img{
 				width: 100%;
@@ -44,39 +49,49 @@
 			<div class="top">
 				<div class="swiper-container banner" style="padding-top: 2rem;">
 				    <div class="swiper-wrapper">
-				        <div class="swiper-slide"><img src="../../img/zx/12.jpg" /></div>
+				        <div class="swiper-slide"><img src="../../img/zx/13.jpg" /></div>
 				        <div class="swiper-slide"><img src="../../img/zx/11.jpg" /></div>
 				        <div class="swiper-slide"><img src="../../img/zx/2.jpg" /></div>
 				    </div>
 				</div>
 			</div>
-			<div class="second fle">
+			<div class="second fle" style="margin-top: 1rem;">
 				<div><img src="../../img/zx/1.jpg" /></div>
-				<div>
+				<div style="text-align: center;">
 					<div>个人简介</div>
 					<div>我是张雪，是个野人！</div>
+					<div style="margin-top: 1rem;">-把好的人记住-</div>
 				</div>
 			</div>
-			<div class="secon">
-				<div class="timecountbox">
-					<div>大事件</div>
+			<div class="second two">
+				<div class="timecountbox" style="display: block;margin: 1rem 0;">
+					<div style="color: #ff5353;font-weight: 700;text-align: center;">--大事件--</div>
 				</div>
 				<div class="fle">
-					<div><img src="../../img/zx/4.jpg" /></div>
-					<div>结婚啦！！！！</div>
-				</div>
-				<div class="fle">
-					<div>24啦！！！</div>
 					<div><img src="../../img/zx/3.jpg" /></div>
+					<div>
+						<div>2021-06-05 24岁啦！</div>
+						<div style="margin-top: 0.6rem;">欢迎光临我的24！</div>
+					</div>
+				</div>
+				<div class="fle">
+					<div>
+						<div>2021-05-02 结婚啦！</div>
+						<div style="margin-top: 0.6rem;">恍恍惚惚这一天到来了，感谢所有亲朋好友的祝福，历程啦！</div>
+					</div>
+					<div><img src="../../img/zx/4.jpg" /></div>
 				</div>
 				<div class="fle">
 					<div><img src="../../img/zx/5.jpg" /></div>
-					<div>领证啦！！！</div>
+					<div>
+						<div>2021-04-17 领证啦！！！</div>
+						<div style="margin-top: 0.6rem;">各位继续答题，我交卷了！</div>
+					</div>
 				</div>
 			</div>
 			<div class="second">
-				<div class="timecountbox">
-					<div>最新照片</div>
+				<div class="timecountbox" style="display: block;margin: 1rem 0;">
+					<div style="color: #ff5353;font-weight: 700;text-align: center;">--最新照片--</div>
 				</div>
 				<div class="swiper-container couponbox" style="overflow: initial;">
 				    <div class="swiper-wrapper">
@@ -98,12 +113,38 @@
 				        		<div class="goodsname">没有烦恼</div>
 				        	</div>
 				        </div>
+				        <div class="swiper-slide"  >
+				        	<div class="goodspic">
+				        		<img src="../../img/zx/14.jpg" />
+				        		<div class="goodsname">又是周末</div>
+				        	</div>
+				        </div>
 				    </div>
 				</div>
 			</div>
+			
+			<div class="second bottom" style="margin-top: 1.5rem;">
+				<div class="timecountbox" style="display: block;margin: 1rem 0;">
+					<div style="color: #ff5353;font-weight: 700;text-align: center;">--我的姐妹--</div>
+				</div>
+				<div class="fle">
+					<div><img src="../../img/zx/17.jpg" /></div>
+					<div><img src="../../img/zx/15.jpg" /></div>
+				</div>
+				<div class="fle">
+					<div><img src="../../img/zx/19.jpg" /></div>
+					<div><img src="../../img/zx/16.jpg" /></div>
+				</div>
+			</div>
+			<div style="text-align: center;margin-top: 1rem;font-size: .9rem;color: #333;font-weight: 700;">
+				广告位招租中...
+			</div>
+			<div style="text-align: center;margin-top: 1.5rem;font-size: .9rem;color: #999;">
+				版权所有@lhl 版本号 v2.0
+			</div>
 		</div>
 		
-		<div class="result-wrap" >
+		<div class="result-wrap" style="display: none;">
 			<div class="nothing">
 				<img src="../../img/zx/7.jpg" style="width: 80%;margin-bottom: 0.5rem;" />
 				<p>欢迎来到张雪的个人空间！</p>
@@ -120,13 +161,15 @@
 			//顶部轮播图
 			var mySwiper = new Swiper ('.banner', {
 			    loop: false, // 循环模式选项
+			    autoplay:true
 			}) 
 			
 			//优惠券
 			var mySwiper = new Swiper ('.couponbox', {
-			    loop: false, // 循环模式选项
+			    loop: true, // 循环模式选项
 			    slidesPerView : 2.5,
-			    spaceBetween : '4%'
+			    spaceBetween : '4%',
+			    autoplay:true
 			}) 
 		</script>
 	</body>
