@@ -1,0 +1,78 @@
+/*
+ 龙洪丽-川工之家-抽奖转盘
+ 2019-07-05 09:10;
+ */
+
+
+/************************抽奖转盘 s *********************/
+
+.lottery-wrap {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: url(../img/game/common_bg.png) center no-repeat;
+	background-size: 100% 100%;
+	overflow: hidden;
+}
+
+.lottery-wrap .turnplate {
+	background: url(../img/game/lottery/div.png) center no-repeat;
+	background-size: 85% 100%;
+	text-align: center;
+	padding: 0.8rem;
+}
+
+.lottery-wrap .banner {
+	top: 28%;
+	left: 0;
+	right: 0;
+	position: absolute;
+	width: 100%;
+}
+
+.lottery-wrap .banner canvas.item {
+	width: 80%;
+	height: 80%;
+}
+
+
+/*转盘指针*/
+
+.lottery-wrap .banner .pointer img {
+	width: 20%;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	margin: auto;
+	position: absolute;
+}
+
+.rotate {
+    -webkit-animation: rotating 2s linear infinite;
+    animation: rotating 2s linear infinite;
+    animation-play-state:running;
+    -webkit-animation-play-state:running; /* Safari 和 Chrome */
+}
+.rotate-pause {
+	-webkit-animation: rotating 2s linear infinite;
+	animation: rotating 2s linear infinite;	 
+    animation-play-state:paused;
+    -webkit-animation-play-state:paused; /* Safari 和 Chrome */
+}
+
+@-webkit-keyframes rotating {
+    from { -webkit-transform: rotate(0) }
+    to { -webkit-transform: rotate(360deg) }
+}
+
+@keyframes rotating {
+    from { transform: rotate(0) }
+    to { transform: rotate(360deg) }
+}
+@-moz-keyframes rotating {
+    from { -moz-transform: rotate(0) }
+    to { -moz-transform: rotate(360deg) }
+}

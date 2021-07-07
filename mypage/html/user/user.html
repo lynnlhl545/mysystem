@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<title>我的</title>
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/user.css" />
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="head">
+				<div class="users">
+					<div class="userinfo">
+						<span class="userpic"><img src="../../img/user/icon_log.png" /></span>
+					    <div>
+					    	<div class="username">Done-one~</div>
+					    	<div>13500000000</div>
+					    </div>
+					</div>
+					<a href="#" class="settings"><img src="../../img/user/set.png" /></a>
+				</div>
+				<div class="toolbox-one">
+					<div class="tool-one">
+						<div>1000</div>
+						<span>积分数量</span>
+					</div>
+					<div class="tool-one" onclick="opencoupon()">
+						<div>5<font>张</font></div>
+						<span>优惠券</span>
+					</div>
+					<div class="tool-one">
+						<div>1000</div>
+						<span>钱包</span>
+					</div>
+				</div>
+			</div>			
+			<div class="menubox">
+				<div>我的订单</div>
+				<div class="navbox">
+					<a href="order/order.html" class="nav">
+						<img src="../../img/user/icon_ispay.png" />
+						<p>待付款</p>
+					</a>
+					<a href="order/order.html" class="nav">
+						<img src="../../img/user/icon_use.png" />
+						<p>待使用</p>
+					</a>
+					<a href="order/order.html" class="nav">
+						<img src="../../img/user/icon_used.png" />
+						<p>已使用</p>
+					</a>
+					<a href="order/order.html" class="nav">
+						<img src="../../img/user/icon_log.png" />
+						<p>订单记录</p>
+					</a>
+				</div>
+			</div>
+			<div class="tool-wrap">
+				<div>我的资料</div>
+				<div class="toolbox">
+					<a href="#" class="tool">
+						<span>积分明细</span>
+						<img src="../../img/common/arrow_b.png" />
+					</a>
+					<a href="#" class="tool">
+						<span>我的红包</span>
+						<img src="../../img/common/arrow_b.png" />
+					</a>
+					<a href="#" class="tool">
+						<span>平台规则</span>
+						<img src="../../img/common/arrow_b.png" />
+					</a>
+					<a href="#" class="tool">
+						<span>客服帮助</span>
+						<img src="../../img/common/arrow_b.png" />
+					</a>
+				</div>
+			</div>
+		</div>
+		
+		<div class="common-nav" id="foot-nav">
+			<a href="../main/main.html">
+				<img src="../../img/common/footbtn/main_normal.png" />
+				<div>首页</div>
+			</a>
+			<a href="../game/game.html">
+				<img src="../../img/common/footbtn/game_normal.png" />
+				<div>娱乐</div>
+			</a>
+			<a href="../integral/integral.html">
+				<img src="../../img/common/footbtn/integral_normal.png" />
+				<div>积分</div>
+			</a>
+			<a href="#"  class="active">
+				<img src="../../img/common/footbtn/user_select.png" />
+				<div>我的</div>
+			</a>
+		</div>
+		<script type="text/javascript" src="../../js/jquery-1.11.0.js" ></script>
+		<script>
+			$('.wrap').css('height', window.screen.availHeight - document.getElementById("foot-nav").offsetHeight + 'px')
+			function opencoupon(){
+				location.href="coupon/coupon.html"
+			}
+		</script>
+	</body>
+</html>

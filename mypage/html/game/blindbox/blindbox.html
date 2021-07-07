@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<title>盲盒</title>
+		<link rel="stylesheet" href="../../../css/common.css" />
+		<link rel="stylesheet" href="../../../css/game.css" />
+	</head>
+	<style>
+		html,
+		body {
+			width: 100%;
+			min-height: 100%;
+			background: url(../../../img/game/common_bg.png) center no-repeat;
+			background-size: 100% 100%;
+		}
+	</style>
+
+	<body>
+		<div class="wrap blind-wrap">
+			<div class="myscore">
+				<img src="../../../img/game/scorebg.png" />
+				<span>我的积分：<font>1000</font></span>
+			</div>
+			<div class="rule">抽奖规则</div>
+			<div class="outBox" id="lotteryBoxs">
+				<div class="prize prize-0"><img src="../../../img/game/blinkbox/one.png"></div>
+				<div class="prize prize-1"><img src="../../../img/game/blinkbox/two.png"></div>
+				<div class="prize prize-2"><img src="../../../img/game/blinkbox/three.png"></div>
+				<div class="prize prize-7"><img src="../../../img/game/blinkbox/four.png"></div>
+				<div class="prize center">12345678</div>
+				<div class="prize prize-3"><img src="../../../img/game/blinkbox/three.png"></div>
+				<div class="prize prize-6"><img src="../../../img/game/blinkbox/four.png"></div>
+				<div class="prize prize-5"><img src="../../../img/game/blinkbox/three.png"></div>
+				<div class="prize prize-4"><img src="../../../img/game/blinkbox/three.png"></div>
+			</div>
+			<div class="tip">每次消耗10或10积分的整数倍</div>
+			<div class="plusstart">
+				<div class="plusbox">
+					<span id="minusTimes"><img src="../../../img/game/blinkbox/minus.png"></span>
+					<span><input type="number" id="times"></span>
+					<span id="plusTimes"><img src="../../../img/game/blinkbox/plus.png"></span>
+				</div>
+				<button class="btn">开始抽盒</button>
+			</div>
+			<div class="prizeresult">
+				<div class="result">
+					<img src="../../../img/game/blinkbox/tuzi.png" />
+					<div class="btnone">0.6倍积分</div>
+				</div>
+				<div class="result">
+					<img src="../../../img/game/blinkbox/songshu.png" />
+					<div class="btntwo">1.8倍积分</div>
+				</div>
+				<div class="result">
+					<img src="../../../img/game/blinkbox/huli.png" />
+					<div class="btnthree">3.6倍积分</div>
+				</div>
+				<div class="result">
+					<img src="../../../img/game/blinkbox/prize20.png" />
+					<div class="btnfour">奖池20%</div>
+				</div>
+				<div class="result">
+					<img src="../../../img/game/blinkbox/prize40.png" />
+					<div class="btnfive">奖池40%</div>
+				</div>
+			</div>
+
+		</div>
+		
+		<!--结果弹窗1-->
+		<div class="result-wrap" style="display: none;">
+			<div class="nothing">
+				<img src="../../../img/game/blinkbox/nothing.png" />
+				<p>哇哦，什么也没开到！</p>
+				<div><span class="again">再来一次</span></div>
+			</div>
+		</div>
+		<!--结果弹窗2-->
+		<div class="result-wrap" style="display: none;">
+			<div class="success">
+				<img src="../../../img/game/blinkbox/tuzi1.png" />
+				<div class="resulttip">恭喜获得<span id="lotteryprize"></span></div>
+				<p class="tip">中奖积分已存入，请前往积分商城中查看</p>
+				<div><span class="again">再来一次</span></div>
+			</div>
+		</div>
+	</body>
+	<script src="../../../js/jquery-1.11.0.js"></script>
+	<script>
+		var times = 1
+		$('#times').val(times*10)
+		//减少倍数
+		$('#minusTimes').click(function() {
+			if(times == 1) {
+				return false
+			}
+			times--
+			$('#times').val(times*10)
+		})
+		//增加倍数
+		$('#plusTimes').click(function() {
+			times++
+			$('#times').val(times*10)
+		})
+	</script>
+	<script>
+		$(document).ready(function() {
+			// 转盘的初定义
+			var lottery = {
+				index: 0, //当前转动到哪个位置，起点位置
+				count: 0, //总共有多少个位置
+				timer: 0, //setTimeout的ID，用clearTimeout清除
+				speed: 10, //初始转动速度
+				times: 0, //转动次数
+				cycle: 30, //转动基本次数：即至少需要转动多少次再进入抽奖环节
+				prize: 0, //中奖位置
+				init: function(id) {
+					if($("#" + id).find(".prize").length > 0) {
+						$lottery = $("#" + id);
+						$units = $lottery.find(".prize");
+						this.obj = $lottery;
+						this.count = $units.length;
+					}
+				},
+				roll: function() {
+					var index = this.index;
+					var count = this.count;
+					var lottery = this.obj;
+					$(lottery).find(".prize").removeClass("active");
+					index += 1;
+					if(index > count - 1) {
+						index = 0;
+					}
+					$(lottery).find(".prize-" + this.index).addClass("active");
+					this.index = index;
+					return false;
+				},
+				stop: function(index) {
+					this.prize = index;
+					return false;
+				}
+			};
+
+			// 中奖转动事件
+			function roll() {
+				lottery.times += 1;
+				lottery.roll();
+				var prize_site = $("#lotteryBoxs").attr("prize_site");
+				if(lottery.times > lottery.cycle + 10 && lottery.index == prize_site) {
+					var prize_id = $("#lotteryBoxs").attr("prize_id");
+					var prize_name = $("#lotteryBoxs").attr("prize_name");
+					clearTimeout(lottery.timer);
+					lottery.prize = -1;
+					lottery.times = 0;
+					click = false;
+
+				} else {
+					if(lottery.times < lottery.cycle) {
+						lottery.speed -= 20;
+					} else if(lottery.times == lottery.cycle) {
+						var index = Math.random() * (lottery.count) | 0;
+						lottery.prize = index;
+					} else {
+						if(lottery.times > lottery.cycle + 10 && ((lottery.prize == 0 && lottery.index == lottery.count - 1) || lottery.prize == lottery.index + 1)) {
+							lottery.speed += 90;
+						} else {
+							lottery.speed += 30;
+						}
+					}
+					if(lottery.speed < 30) {
+						lottery.speed = 30;
+					}
+					lottery.timer = setTimeout(roll, lottery.speed);
+				}
+				return false;
+			}
+
+			var click = false;
+
+			// 后台数据的调用
+			$(function() {
+				lottery.init('lotteryBoxs');
+				$(".btn").click(function() {
+					if(click) {
+						return false;
+					} else {
+						lottery.speed = 100;
+						//此处数据应该从接口获取 
+						var prizeArr = ["谢谢参与", "一等奖", "二等奖", "三等奖", "四等奖", "五等奖", "六等奖", "七等奖"]
+						//随机位置
+						var prizeId = Math.floor(Math.random() * (7 - 0 + 1) + 0);
+						var prize_site = prizeId;
+						console.log("恭喜抽中" + prizeArr[prizeId]);
+						$("#lotteryprize").html(prizeArr[prizeId])
+						$("#lotteryBoxs").attr("prize_site", prize_site);
+						$("#lotteryBoxs").attr("prize_name", prizeArr[prizeId]);
+						roll();
+						click = true;
+						return false;
+					}
+				});
+			})
+
+		});
+	</script>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<title>娱乐</title>
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/game.css" />
+		<style>
+			html,body{
+				background: #1E0E66;
+				height: 100%;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="banner"><img src="../../img/game/banner.png" /></div>
+			<a href="#" class="rule">规则</a>
+			<div class="games">
+				<a href="#">
+					<img src="../../img/game/zp.png" />
+				</a>
+				<a href="blindbox/blindbox.html">
+					<img src="../../img/game/mh.png" />
+				</a>
+				<a href="pk/pk.html">
+					<img src="../../img/game/pk.png" />
+				</a>
+			</div>
+		</div>
+		<div class="common-nav" id="foot-nav">
+			<a href="../main/main.html">
+				<img src="../../img/common/footbtn/main_normal.png" />
+				<div>首页</div>
+			</a>
+			<a href="#"  class="active">
+				<img src="../../img/common/footbtn/game_select.png" />
+				<div>娱乐</div>
+			</a>
+			<a href="../integral/integral.html">
+				<img src="../../img/common/footbtn/integral_normal.png" />
+				<div>积分</div>
+			</a>
+			<a href="../user/user.html" >
+				<img src="../../img/common/footbtn/user_normal.png" />
+				<div>我的</div>
+			</a>
+		</div>
+		<script type="text/javascript" src="../../js/jquery-1.11.0.js" ></script>
+		<script>
+			$('.wrap').css('height', window.screen.availHeight - document.getElementById("foot-nav").offsetHeight + 'px')
+		</script>
+	</body>
+</html>

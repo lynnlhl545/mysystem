@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<title>发起pk</title>
+		<link rel="stylesheet" href="../../../css/common.css" />
+		<link rel="stylesheet" href="../../../css/game.css" />
+		<link rel="stylesheet" href="../../../lib/mobileselect/mobileSelect.css" />
+	</head>
+	<style>
+		html,body{
+			height: 100%;
+		}
+		
+	</style>
+
+	<body>
+		<div class="wrap mypk-wrap">
+			<div class="myscore">
+				<img src="../../../img/game/scorebg.png" />
+				<span>我的积分：<font>1000</font></span>
+			</div>
+			<div class="rule">抽奖规则</div>
+		    <div class="choosebox">
+		    	<div class="choose">
+		    		<div>积分场选择</div>
+		    		<input type="text" class="selectinput" id="score_type" name="score_type" value="100" required readonly>
+		    	</div>
+		    	<div class="choose">
+		    		<div>几人场选择</div>
+		    		<input type="text" class="selectinput" id="people_type" name="people_type" value="1V1" required readonly>
+		    	</div>
+		    </div>	
+			<div class="setting-wrap">
+				<div>设置出拳</div>
+				<div class="settingbox">
+					<div class="countbox">
+						<span class="countnum">第一局</span>
+						<div class="resultbox">
+							<div class="result">
+								<div class="resultitem">
+									<div class="itemver">
+										<img src="../../../img/game/pk/stone.png" />
+									</div>
+								</div>
+								<span>第一把</span>
+							</div>
+							<div class="result">
+								<div class="resultitem">
+									<div class="itemver">
+										<span>？</span>
+										<div>点击设置</div>
+									</div>
+								</div>
+								<span>第二把</span>
+							</div>
+							<div class="result">
+								<div class="resultitem">
+									<div class="itemver">
+										<span>？</span>
+										<div>点击设置</div>
+									</div>
+								</div>
+								<span>第三把</span>
+							</div>
+						</div>
+					</div>
+				    <div class="countbox">
+						<span class="countnum">第二局</span>
+						<div class="resultbox">
+							<div class="result">
+								<div class="resultitem">
+									<div class="itemver">
+										<img src="../../../img/game/pk/stone.png" />
+									</div>
+								</div>
+								<span>第一把</span>
+							</div>
+							<div class="result">
+								<div class="resultitem">
+									<div class="itemver">
+										<span>？</span>
+										<div>点击设置</div>
+									</div>
+								</div>
+								<span>第二把</span>
+							</div>
+							<div class="result">
+								<div class="resultitem">
+									<div class="itemver">
+										<span>？</span>
+										<div>点击设置</div>
+									</div>
+								</div>
+								<span>第三把</span>
+							</div>
+						</div>
+					</div>
+                    <div class="countbox">
+						<span class="countnum">第二局</span>
+						<div class="resultbox">
+							<div class="result">
+								<div class="resultitem">
+									<div class="itemver">
+										<img src="../../../img/game/pk/stone.png" />
+									</div>
+								</div>
+								<span>第一把</span>
+							</div>
+							<div class="result">
+								<div class="resultitem">
+									<div class="itemver">
+										<span>？</span>
+										<div>点击设置</div>
+									</div>
+								</div>
+								<span>第二把</span>
+							</div>
+							<div class="result">
+								<div class="resultitem">
+									<div class="itemver">
+										<span>？</span>
+										<div>点击设置</div>
+									</div>
+								</div>
+								<span>第三把</span>
+							</div>
+						</div>
+					</div>
+                    
+                    <div class="addcount">
+                    	添加第三局
+                    </div>
+				</div>
+			</div>
+			<div class="bottombtn">
+				<div class="reset">全部重置</div>
+				<div class="startpk">发起PK</div>
+			</div>
+		</div>
+		<!--选择出拳弹窗-->
+		<div class="choose-whole" style="display: none;">
+			<div class="gamebox">
+				<div class="game clicked"><img src="../../../img/game/pk/stone.png"></div>
+				<div class="game"><img src="../../../img/game/pk/shears.png"></div>
+				<div class="game"><img src="../../../img/game/pk/cloth.png"></div>
+			</div>
+			<div class="settingbtn">下一步</div>
+		</div>
+		
+		<!--发起成功-->
+		<div class="result-wrap"  style="display: none;">
+			<div class="successresult">
+				<img src="../../../img/game/pk/success.png" />
+				<div>
+					<span>设置成功</span>
+					<p>发起本次PK消耗1000积分</p>
+				</div>
+				<div class="suc-faibtns">
+					<span class="share">分享好友</span>
+					<span class="start">发起PK</span>
+				</div>
+			</div>
+		</div>
+		<!--发起失败-->
+		<div class="result-wrap">
+			<div class="failresult">
+				<img src="../../../img/game/pk/fail.png" />
+				<div>
+					<span class="fail">发起失败</span>
+					<p>积分不足，请重新发起对应的积分场</p>
+				</div>
+				<div class="suc-faibtns">
+					<span class="oncemore">再来一次</span>
+				</div>
+			</div>
+		</div>
+		
+	</body>
+	<script src="../../../js/jquery-1.11.0.js"></script>
+	<script src="../../../lib/mobileselect/mobileSelect.js"></script>
+    <script>
+    	var scoreTypeObj = new MobileSelect({
+		      trigger: '#score_type',
+		      title: '请选择积分场次',
+		        wheels: [
+		           {data:['100','200','300','500','1000']}
+		      ],
+		      position:[0],
+		      callback:function(indexArr, data){
+		            $("#score_type").val(data[0]);
+		            $("#score_type").blur();
+		      }
+		});
+		
+		var peopleTypeObj = new MobileSelect({
+		      trigger: '#people_type',
+		      title: '请选择积分场次',
+		        wheels: [
+		           {data:['1V1','2V2','3V3','5V5']}
+		      ],
+		      position:[0],
+		      callback:function(indexArr, data){
+		            $("#people_type").val(data[0]);
+		            $("#people_type").blur();
+		      }
+		});
+	</script>
+</html>

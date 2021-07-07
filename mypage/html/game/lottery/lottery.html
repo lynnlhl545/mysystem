@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<title>抽奖</title>
+		<link rel="stylesheet" href="../../../css/common.css" />
+		<link rel="stylesheet" href="../../../css/game.css" />
+		<style>
+			html {
+				background: url(../../../img/game/common_bg.png) center no-repeat;
+				background-size: 100% 100%;
+			}
+			
+			html,
+			body {
+				min-height: 100%;
+			}
+			
+			.toppointer {
+				position: absolute;
+				top: 20px;
+				left: calc(50% - 15px);
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="wrap lottery-wrap">
+			<div class="myscore">
+				<img src="../../../img/game/scorebg.png" />
+				<span>我的积分：<font>1000</font></span>
+			</div>
+			<div class="rule">抽奖规则</div>
+			<div class="score">
+				<span>2</span>
+				<span>2</span>
+			</div>
+			<div class="tip">每次游戏消耗10或10积分的整数倍</div>
+			<div class="lotterybox">
+				<img id="scream" src="../../../img/game/lottery/ones.png" style="display: none;">
+				<img id="scream2" src="../../../img/game/lottery/twos.png" style="display: none;">
+				<canvas class="lotterycanvas" id="wheelcanvas" style="width: 100%; height: 100%;"></canvas>
+				<img src="../../../img/game/lottery/dot.png" class="toppointer">
+				<div class="centerbox">
+					<div class="centerboxline">
+						<div class="centerprize sctive">
+							<span>2</span>
+							<p>奖励倍数2</p>
+						</div>
+						<div class="centerprize">
+							<span>4</span>
+							<p>奖励倍数4</p>
+						</div>
+					</div>
+					<div class="centerboxline">
+						<div class="centerprize">
+							<span>7</span>
+							<p>奖励倍数7</p>
+						</div>
+						<div class="centerprize">
+							<span>12</span>
+							<p>奖励倍数12</p>
+						</div>
+						<div class="centerprize">
+							<span>25</span>
+							<p>奖励倍数25</p>
+						</div>
+					</div>
+					<div class="centerboxline">
+						<div class="centerprize">
+							<span><img src="../../../img/game/lottery/ones.png"></span>
+							<p>奖励倍数50</p>
+						</div>
+						<div class="centerprize">
+							<span><img src="../../../img/game/lottery/twos.png"></span>
+							<p>奖励倍数100</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="setscores">
+				<div class="set">
+					<span class="bg"><img src="../../../img/game/lottery/bg2.png"></span>
+					<span class="prize">2</span>
+					<span class="setinput"><input value="0" type="number"></span>
+				</div>
+				<div class="set">
+					<span class="bg"><img src="../../../img/game/lottery/bg2.png"></span>
+					<span class="prize">4</span>
+					<span class="setinput"><input value="0" type="number"></span>
+				</div>
+				<div class="set">
+					<span class="bg"><img src="../../../img/game/lottery/bg2.png"></span>
+					<span class="prize">7</span>
+					<span class="setinput"><input value="0" type="number"></span>
+				</div>
+				<div class="set">
+					<span class="bg"><img src="../../../img/game/lottery/bg2.png"></span>
+					<span class="prize">12</span>
+					<span class="setinput"><input value="0" type="number"></span>
+				</div>
+				<div class="set">
+					<span class="bg"><img src="../../../img/game/lottery/bg2.png"></span>
+					<span class="prize">25</span>
+					<span class="setinput"><input value="0" type="number"></span>
+				</div>
+				<div class="set">
+					<span class="bg"><img src="../../../img/game/lottery/bg2.png"></span>
+					<span class="prize"><img src="../../../img/game/lottery/ones.png"></span>
+					<span class="setinput"><input value="0" type="number"></span>
+				</div>
+				<div class="set">
+					<span class="bg"><img src="../../../img/game/lottery/bg2.png"></span>
+					<span class="prize"><img src="../../../img/game/lottery/twos.png"></span>
+					<span class="setinput"><input value="0" type="number"></span>
+				</div>
+			</div>
+			<div class="toolsbtn">
+				<button class="reset">清空</button>
+				<button class="continue">继续跟投</button>
+				<button class="start pointer">确认下注</button>
+			</div>
+			<div class="usersbox">
+				<div>游戏参与人数：<span>2360</span></div>
+				<div class="user">
+					<div class="player">
+						<span class="atter"><img src="../../../img/game/blinkbox/nothing.png" /></span>
+						<span class="playername">名称名称名称名称名称名称名称名称</span>
+					</div>
+					<div class="player">
+						<span class="atter"><img src="../../../img/game/blinkbox/nothing.png" /></span>
+						<span class="playername">名称名称</span>
+					</div>
+					<div class="player">
+						<span class="atter"><img src="../../../img/game/blinkbox/nothing.png" /></span>
+						<span class="playername">名称名称</span>
+					</div>
+					<div class="player">
+						<span class="atter"><img src="../../../img/game/blinkbox/nothing.png" /></span>
+						<span class="playername">名称名称</span>
+					</div>
+					<div class="player">
+						<span class="atter"><img src="../../../img/game/blinkbox/nothing.png" /></span>
+						<span class="playername">名称名称</span>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="result-wrap" style="display: none;">
+			<div class="nothing">
+				<img src="../../../img/game/blinkbox/nothing.png" />
+				<p>哇哦，什么也没开到！</p>
+				<div><span class="again">再来一次</span></div>
+			</div>
+		</div>
+
+		<div class="result-wrap" style="display: none;">
+			<div class="lottery-prize">
+				<div class="lott-resu">
+					<span class="close"><img src="../../../img/game/lottery/close.png"></span>
+					<div class="resuletxt1">+
+						<font>50积分</font>
+					</div>
+					<div class="resuletxt2">恭喜获得<span>50</span>积分</div>
+					<div class="resuletxt3">中奖积分已存入，请前往积分商城中查看</div>
+					<div><span class="again">再来一次</span></div>
+				</div>
+			</div>
+		</div>
+
+		<script type="text/javascript" src="../../../js/jquery-1.11.0.js"></script>
+		<script type="text/javascript" src="../../../js/lotteryRotate.js"></script>
+
+		<script type="text/javascript">
+			var canvasW = document.getElementById("wheelcanvas").width
+
+			var finalindex = 10; //奖品下标位置
+
+			var turnplate = {
+				restaraunts: [], //大转盘奖品名称
+				colors: [], //大转盘奖品区块对应背景颜色
+				outsideRadius: canvasW * 0.42, //大转盘外圆的半径
+				textRadius: canvasW * 0.35, //大转盘奖品位置距离圆心的距离
+				insideRadius: canvasW * 0.32, //大转盘内圆的半径
+				startAngle: 0, //开始角度
+
+				bRotate: false //false:停止;ture:旋转
+			};
+
+			$(document).ready(function() {
+				//动态添加大转盘的奖品与奖品区域背景颜色
+				turnplate.restaraunts = ["100", "99", "7", "12", "25", "../../../img/game/lottery/ones.png", "15", "2", "4", "7", "122", "25", "../../../img/game/lottery/twos.png", "2", "4", "7", "12", "15", "2", "4"];
+				turnplate.colors = ["#2E92F7", "#87CF63", "#2E92F7", "#FFA016", "#6C2EAA", "#2E2C75", "#673A7E", "#2E92F7", "#87CF63", "#2E92F7", "#FFA016", "#6C2EAA", "#2E2C75", "#2E92F7", "#87CF63", "#2E92F7", "#FFA016", "#6C2EAA", "#2E2C75", "#2E92F7"];
+
+				var rotateTimeOut = function() {
+					$('#wheelcanvas').rotate({
+						angle: 0,
+						animateTo: 0,
+						duration: 8000,
+						callback: function() {
+							alert('网络超时，请检查您的网络设置！');
+						}
+					});
+				};
+
+				//旋转转盘 item:奖品位置; txt：提示语;
+				var rotateFn = function(item, txt) {
+					var angles = item * (360 / turnplate.restaraunts.length) - (360 / (turnplate.restaraunts.length * 2));
+					if(angles < 270) {
+						angles = 270 - angles;
+					} else {
+						angles = 360 - angles + 270;
+					}
+					$('#wheelcanvas').stopRotate();
+					$('#wheelcanvas').rotate({
+						angle: 0,
+						animateTo: angles + 1800,
+						duration: 8000,
+						callback: function() {
+							alert("恭喜获得" + txt);
+							turnplate.bRotate = !turnplate.bRotate;
+						}
+					});
+				};
+
+				$('.pointer').click(function() {
+					if(turnplate.bRotate) return;
+					turnplate.bRotate = !turnplate.bRotate;
+					//获取随机数(奖品个数范围内)
+					//var item = 6
+					rotateFn(finalindex + 1, turnplate.restaraunts[finalindex]);
+				});
+			});
+
+			//页面所有元素加载完毕后执行drawRouletteWheel()方法对转盘进行渲染
+			window.onload = function() {
+				drawRouletteWheel();
+			};
+
+			function drawRouletteWheel() {
+				var canvas = document.getElementById("wheelcanvas");
+				canvas.height = canvas.width
+				if(canvas.getContext) {
+					//根据奖品个数计算圆周角度
+					var arc = Math.PI / (turnplate.restaraunts.length / 2); //圆周率/ 奖品数量除以2
+					var ctx = canvas.getContext("2d");
+					//在给定矩形内清空一个矩形
+					ctx.clearRect(0, 0, canvasW, canvasW);
+					//strokeStyle 属性设置或返回用于笔触的颜色、渐变或模式
+					ctx.strokeStyle = "#0DE7E1";
+					ctx.lineWidth = 7;
+					//font 属性设置或返回画布上文本内容的当前字体属性
+					ctx.font = '12px Microsoft YaHei';
+					// 绘制圆 （弧形）
+					for(var i = 0; i < turnplate.restaraunts.length; i++) {
+						var angle = turnplate.startAngle + i * arc;
+						ctx.fillStyle = turnplate.colors[i];
+						ctx.beginPath();
+						//arc(x,y,r,起始角,结束角,绘制方向) 方法创建弧/曲线（用于创建圆或部分圆）
+						ctx.arc(canvasW / 2, canvasW / 2, turnplate.outsideRadius, angle, angle + arc, false); //绘制外圆
+						ctx.arc(canvasW / 2, canvasW / 2, turnplate.insideRadius, angle + arc, angle, true); //绘制内圆
+						ctx.stroke();
+						ctx.fill();
+						//锁画布(为了保存之前的画布状态)
+						ctx.save();
+
+						//----绘制奖品开始----
+						ctx.fillStyle = "#FFF"; /*奖品文字颜色*/
+						var text = turnplate.restaraunts[i];
+						//translate方法重新映射画布上的 (0,0) 位置
+						ctx.translate(canvasW / 2 + Math.cos(angle + arc / 2) * turnplate.textRadius, canvasW / 2 + Math.sin(angle + arc / 2) * turnplate.textRadius);
+
+						//rotate方法旋转当前的绘图
+						ctx.rotate(angle + arc / 2 + Math.PI / 2);
+						if(text.indexOf('ones') > 0) {
+							ctx.drawImage(document.getElementById('scream'), -15, -15)
+						} else if(text.indexOf('twos') > 0) {
+							ctx.drawImage(document.getElementById('scream2'), -15, -15)
+						} else {
+							ctx.fillText(text, -ctx.measureText(text).width / 2, 0);
+						}
+
+						ctx.restore();
+						//----绘制奖品结束----
+					}
+				}
+			}
+		</script>
+
+	</body>
+
+</html>

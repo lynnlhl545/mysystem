@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<title>我的订单</title>
+		<link rel="stylesheet" href="../../../css/common.css" />
+		<link rel="stylesheet" href="../../../css/common_coupon.css" />
+	</head>
+	<body>
+		<div class="wrap order-wrap">
+			<div class="head">
+				<div class="search">
+					<input type="search" placeholder="输入关键字"/>
+					<button>搜索</button>
+				</div>
+				<div class="secondnav">
+					<span class="currenttwo">全部</span>
+					<span>待付款</span>
+					<span>待使用</span>
+					<span>已使用</span>
+				</div>
+				
+			</div>
+			<div class="content">
+				<div class="contenttip">优惠券</div>
+				<div class="couponbox">
+					<div class="coupon">
+						<div class="names">
+							<div class="nametxt">屋头串串</div>
+							<span class="typeone">待付款</span>
+						</div>
+						<div class="info-r">
+							<div class="couponinfo">
+								<div class="couponpic"><img src="../../../img/main/temp.png" /></div>
+								<div class="moreinfo">
+									<div class="time">购买时间：<span>2021-05-01 19:00</span></div>
+									<div class="validdate">数量：<span>1</span></div>
+									<div class="price">付款：<span>￥34.9 赠送50积分</span></div>
+								</div>
+							</div>
+							<div class="coupontype">
+								<div class="usebtn delete">删除订单</div>
+								<div class="usebtn pay" onclick="openpay()">立即付款</div>
+							</div>
+						</div>
+					</div>
+					<div class="coupon">
+						<div class="names">
+							<div class="nametxt">屋头串串</div>
+							<span class="typetwo">已使用</span>
+						</div>
+						<div class="info-r">
+							<div class="couponinfo">
+								<div class="couponpic"><img src="../../../img/main/temp.png" /></div>
+								<div class="moreinfo">
+									<div class="time">购买时间：<span>2021-05-01 19:00</span></div>
+									<div class="validdate">数量：<span>1</span></div>
+									<div class="price">付款：<span>￥34.9 赠送50积分</span></div>
+								</div>
+							</div>
+							<div class="coupontype">
+								<div class="usebtn delete">删除订单</div>
+								<div class="usebtn use">再来一单</div>
+							</div>
+						</div>
+					</div>
+					<div class="coupon">
+						<div class="names">
+							<div class="nametxt">屋头串串</div>
+							<span class="typeone">待使用</span>
+						</div>
+						<div class="info-r">
+							<div class="couponinfo">
+								<div class="couponpic"><img src="../../../img/main/temp.png" /></div>
+								<div class="moreinfo">
+									<div class="time">购买时间：<span>2021-05-01 19:00</span></div>
+									<div class="validdate">数量：<span>1</span></div>
+									<div class="price">付款：<span>￥34.9 赠送50积分</span></div>
+								</div>
+							</div>
+							<div class="coupontype">
+								<div class="usebtn delete">删除订单</div>
+								<div class="usebtn use">立即使用</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../../js/jquery-1.11.0.js" ></script>
+		<script>
+			function openpay(){
+				location.href="../pay/pay.html"
+			}
+		</script>
+	</body>
+</html>

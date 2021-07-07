@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<title>积分</title>
+		<link rel="stylesheet" href="../../css/common.css" />
+		<link rel="stylesheet" href="../../css/integral.css" />
+	</head>
+	<body>
+		<div class="wrap">
+			<div class="userscore">
+				<div class="userinfo">
+					<span class="userpic"><img src="../../img/user/icon_log.png" /></span>
+					<div>
+					    <div class="username">Done-one~</div>
+					    <div class="score">积分<span>1000</span></div>
+					</div>
+				</div>
+				<div class="navbox">
+					<span class="current">全部</span>
+					<span>我能兑换</span>
+					<span>积分攻略</span>
+				</div>
+			</div>
+			<div class="content">
+				<div class="comm-tip">商品兑换</div>
+				<div class="commoditybox">
+					<div class="commodity" onclick="openinfo()">
+						<div class="comm-pic"><img src="../../img/integral/temp.png" /></div>
+						<div class="comm-name">屋头串串10元优惠券</div>
+						<div class="comm-oldpri">原价：<span>9.9元</span></div>
+						<div class="comm-pri">9.9元</div>
+					</div>
+					<div class="commodity" onclick="openinfo()">
+						<div class="comm-pic"><img src="../../img/game/banner.png" /></div>
+						<div class="comm-name">屋头串串10元优惠券</div>
+						<div class="comm-oldpri">原价：<span>9.9元</span></div>
+						<div class="comm-pri">9.9元+200积分</div>
+					</div>
+					<div class="commodity" onclick="openinfo()">
+						<div class="comm-pic"><img src="../../img/integral/temp.png" /></div>
+						<div class="comm-name">屋头串串10元优惠券</div>
+						<div class="comm-oldpri">原价：<span>9.9元</span></div>
+						<div class="comm-pri">9.9元</div>
+					</div>
+					<div class="commodity" onclick="openinfo()">
+						<div class="comm-pic"><img src="../../img/integral/temp.png" /></div>
+						<div class="comm-name">屋头串串10元优惠券</div>
+						<div class="comm-oldpri">原价：<span>9.9元</span></div>
+						<div class="comm-pri">9.9元</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="common-nav" id="foot-nav">
+			<a href="../main/main.html">
+				<img src="../../img/common/footbtn/main_normal.png" />
+				<div>首页</div>
+			</a>
+			<a href="../game/game.html">
+				<img src="../../img/common/footbtn/game_normal.png" />
+				<div>娱乐</div>
+			</a>
+			<a href="#"  class="active">
+				<img src="../../img/common/footbtn/integral_select.png" />
+				<div>积分</div>
+			</a>
+			<a href="../user/user.html" >
+				<img src="../../img/common/footbtn/user_normal.png" />
+				<div>我的</div>
+			</a>
+		</div>
+		<script type="text/javascript" src="../../js/jquery-1.11.0.js" ></script>
+		<script>
+			$('.wrap').css('height', window.screen.availHeight - document.getElementById("foot-nav").offsetHeight + 'px')
+		    function openinfo(){
+		    	location.href="info/info.html"
+		    }
+		</script>
+	</body>
+</html>

@@ -1,0 +1,133 @@
+/*css reset*/
+html {
+	font-family: sans-serif;
+}
+html, body, header, section, footer, div, ul, ol, li, img, a, span, em, del, legend, center, strong, var, fieldset, form, label, dl, dt, dd, cite, input, hr, time, mark, code, figcaption, figure, textarea, h1, h2, h3, h4, h5, h6, p {
+	margin: 0;
+	border: 0;
+	padding: 0;
+	font-style: normal;
+}
+html, body {
+	-webkit-touch-callout: none;
+	-webkit-text-size-adjust: none;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-user-select: none;
+	background-color: #fff;
+	font-size: 20px;
+}
+option {
+	font-size: 12px;
+}
+nav, article, aside, details, main, header, footer, section, fieldset, figcaption, figure {
+	display: block;
+}
+img, a, button, em, del, strong, var, label, cite, small, time, mark, code, textarea {
+	display: inline-block;
+}
+img {
+	vertical-align: middle;
+}
+
+header, section, footer {
+	position: relative;
+}
+ol, ul {
+	list-style: none;
+}
+input, button, textarea {
+	border: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 1em;
+	line-height: 1em;
+	/*-webkit-appearance:none;*/
+	background-color: rgba(0, 0, 0, 0);
+}
+input {
+	outline: none;
+}
+span {
+	display: inline-block;
+}
+a:active, a:hover {
+	outline: 0;
+}
+a, a:visited {
+	text-decoration: none;
+	color: inherit;
+}
+
+label, .wordWrap {
+	word-wrap: break-word;
+	word-break: break-all;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+td, th {
+	padding: 0;
+}
+
+@media only screen and (min-width: 320px) {
+	html{
+		font-size: 13.65px;
+	}
+}
+			
+@media only screen and (min-width: 360px) {
+	html{
+		font-size: 15.36px;
+	}
+}
+			
+@media only screen and (min-width: 375px) {
+	html{
+		font-size: 16px;
+	}
+}
+			
+@media only screen and (min-width: 390px) {
+	html{
+		font-size: 16.64px;
+	}
+}
+			
+@media only screen and (min-width: 414px) {
+	html{
+		font-size: 17.66px;
+	}
+}
+			
+@media only screen and (min-width: 640px) {
+	html{
+		font-size: 27.31px;
+	}
+}
+
+/*底部菜单栏*/
+.common-nav{
+	position: fixed;
+	bottom: 0;
+	left: 0;
+    right: 0;
+    background: #fff;
+    display: flex;
+    display: -webkit-flex;
+    font-size: .8rem;
+    color: #898989;
+    padding: .5rem 0;
+    z-index: 99;
+    box-sizing: border-box;
+}
+.common-nav a{
+	flex: 1;
+	text-align: center;
+}
+.common-nav a.active{
+	color: #FF3131;
+}
+.common-nav a img{
+	margin-bottom: .2rem;
+}

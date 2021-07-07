@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<title>优惠券</title>
+		<link rel="stylesheet" href="../../../css/common.css" />
+		<link rel="stylesheet" href="../../../css/common_coupon.css" />
+	</head>
+	<body>
+		<div class="wrap coupon-wrap">
+			<div class="head">
+				<div class="topnav">
+					<span class="currentone">优惠券</span>
+					<span>代金券</span>
+				</div>
+				<div class="secondnav">
+					<span class="currenttwo">未使用</span>
+					<span>已使用</span>
+					<span>已过期</span>
+				</div>
+				<div class="search">
+					<input type="search" placeholder="输入关键字"/>
+					<button>搜索</button>
+				</div>
+			</div>
+			<div class="content">
+				<div class="contenttip">优惠券</div>
+				<div class="couponbox">
+					<div class="coupon" onclick="opencouponinfo()">
+						<div class="names">
+							<div class="price">￥50</div>
+							<span class="needs">满100元使用</span>
+						</div>
+						<div class="info-r">
+							<div class="couponinfo">
+								<div class="couponpic"><img src="../../../img/main/temp.png" /></div>
+								<div class="moreinfo">
+									<div class="nametxt">屋头串串</div>
+									<div class="validdate">有效期：<span>2021.05.01至2021.08.01</span></div>
+									<div class="distance">距离：300m</div>
+								</div>
+							</div>
+							<div class="coupontype">
+								<div class="detail">优惠券说明<img src="../../../img/user/arrow.png"></div>
+								<div class="usebtn use">立即使用</div>
+							</div>
+						</div>
+					</div>
+					<div class="coupon" onclick="opencouponinfo()">
+						<div class="names">
+							<div class="price">￥50</div>
+							<span class="needs">满100元使用</span>
+						</div>
+						<div class="info-r">
+							<div class="couponinfo">
+								<div class="couponpic"><img src="../../../img/main/temp.png" /></div>
+								<div class="moreinfo">
+									<div class="nametxt">屋头串串</div>
+									<div class="validdate">有效期：<span>2021.05.01至2021.08.01</span></div>
+									<div class="distance">距离：300m</div>
+								</div>
+							</div>
+							<div class="coupontype">
+								<div class="detail">优惠券说明<img src="../../../img/user/arrow.png"></div>
+								<div class="usebtn used">已使用</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../../js/jquery-1.11.0.js" ></script>
+		<script>
+			function opencouponinfo(){
+				location.href="couponinfo.html"
+			}
+		</script>
+	</body>
+</html>

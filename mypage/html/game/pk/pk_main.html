@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<title>pk</title>
+		<link rel="stylesheet" href="../../../css/common.css" />
+		<link rel="stylesheet" href="../../../css/game.css" />
+	</head>
+	<style>
+		html,body{
+			height: 100%;
+		}
+		
+	</style>
+
+	<body>
+		<div class="wrap mainpk-wrap">
+			<div class="myscore">
+				<img src="../../../img/game/scorebg.png" />
+				<span>我的积分：<font>1000</font></span>
+			</div>
+			<div class="rule">抽奖规则</div>
+			<div class="mains">
+				<div class="userbox">
+					<div class="user">
+						<span><img src="../../../img/game/pk/fail.png" /></span>
+						<div>用户名1</div>
+					</div>
+				</div>
+				<div class="panel">
+					<div class="state">正在设置出拳</div>
+					<div class="scoretype">100积分场：消耗积分100</div>
+					<div class="panelbox">
+						<div class="prepare" style="display: none;">
+							<div>准备</div>
+							<div class="time">3</div>
+							<div>准备</div>
+						</div>
+						<div class="result" style="display: none;">
+							<div class="punchresult">
+								<span><img src="../../../img/game/pk/stone.png"></span>
+							</div>
+							<div>
+								<img src="../../../img/game/pk/ping.png" />
+							</div>
+							<div class="punchresult">
+								<span><img src="../../../img/game/pk/stone.png"></span>
+							</div>
+						</div>
+						
+						<div class="result" style="display: none;">
+							<div class="punchresult">
+								<span><img src="../../../img/game/pk/stone.png"></span>
+								<span class="win"><img src="../../../img/game/pk/win.png"></span>
+							</div>
+							<div class="punchresult">
+								<span><img src="../../../img/game/pk/shears.png"></span>
+								<span class="lose"><img src="../../../img/game/pk/lose.png"></span>
+							</div>
+						</div>
+						
+						<div class="result">
+							<div class="punchresult">
+								<span><img src="../../../img/game/pk/stone.png"></span>
+								<span class="win"><img src="../../../img/game/pk/win.png"></span>
+							</div>
+							<div class="punchresult">
+								<span><img src="../../../img/game/pk/shears.png"></span>
+								<span class="lose"><img src="../../../img/game/pk/lose.png"></span>
+							</div>
+						</div>
+					</div>
+					<div class="totalresult">
+						<div class="resultline">
+							<div>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+								<span>平</span>
+							</div>
+							<div>第一场</div>
+							<div>
+								<span>平</span>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+							</div>
+						</div>
+					</div>
+					<div class="counts">第一局，剩余两局</div>
+				</div>
+				<div class="userbox">
+					<div class="user">
+						<span><img src="../../../img/game/pk/fail.png" /></span>
+						<div>用户名4</div>
+					</div>
+				</div>
+			</div>
+		    <div class="bottomtool">
+		    	<div class="backout">退出</div>
+		    </div>
+		</div>
+		
+		<!--选择出拳弹窗-->
+		<div class="choose-whole" style="display: none;">
+			<div class="gamebox">
+				<div class="game clicked"><img src="../../../img/game/pk/stone.png"></div>
+				<div class="game"><img src="../../../img/game/pk/shears.png"></div>
+				<div class="game"><img src="../../../img/game/pk/cloth.png"></div>
+			</div>
+			<div class="settingbtn">设置完成</div>
+		</div>
+		
+		<!--结果弹窗1-->
+		<div class="result-wrap" style="display: none;">
+			<div class="resultmain successmain">
+				<div class="mainpanel ">
+					<div class="getorlose">获得积分:100</div>
+					<div class="totalresult">
+						<div class="resultline">
+							<div>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+								<span>平</span>
+							</div>
+							<div>第一场</div>
+							<div>
+								<span>平</span>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+							</div>
+						</div>
+						<div class="resultline">
+							<div>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+								<span>胜</span>
+							</div>
+							<div>第二场</div>
+							<div>
+								<span>负</span>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+							</div>
+						</div>
+						<div class="resultline">
+							<div>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+								<span>平</span>
+							</div>
+							<div>第三场</div>
+							<div>
+								<span>平</span>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="resultbtn">
+					<span class="out">退出</span>
+					<span class="nextpk">继续PK</span>
+				</div>
+			</div>
+		</div>
+        
+        <!--结果弹窗2-->
+		<div class="result-wrap" style="display: none;">
+			<div class="resultmain losemain">
+				<div class="mainpanel ">
+					<div>消耗积分:100</div>
+					<div class="totalresult">
+						<div class="resultline">
+							<div>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+								<span>平</span>
+							</div>
+							<div>第一场</div>
+							<div>
+								<span>平</span>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+							</div>
+						</div>
+						<div class="resultline">
+							<div>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+								<span>胜</span>
+							</div>
+							<div>第二场</div>
+							<div>
+								<span>负</span>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+							</div>
+						</div>
+						<div class="resultline">
+							<div>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+								<span>平</span>
+							</div>
+							<div>第三场</div>
+							<div>
+								<span>平</span>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="resultbtn">
+					<span class="out">退出</span>
+					<span class="nextpk">继续PK</span>
+				</div>
+			</div>
+		</div>
+	    
+	    <!--结果弹窗2-->
+		<div class="result-wrap" style="display: none;">
+			<div class="resultmain pingmain">
+				<div class="mainpanel ">
+					<div>消耗积分:0</div>
+					<div class="totalresult">
+						<div class="resultline">
+							<div>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+								<span>平</span>
+							</div>
+							<div>第一场</div>
+							<div>
+								<span>平</span>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+							</div>
+						</div>
+						<div class="resultline">
+							<div>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+								<span>胜</span>
+							</div>
+							<div>第二场</div>
+							<div>
+								<span>负</span>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+							</div>
+						</div>
+						<div class="resultline">
+							<div>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+								<span>平</span>
+							</div>
+							<div>第三场</div>
+							<div>
+								<span>平</span>
+								<span><img src="../../../img/game/pk/stone.png"></span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="resultbtn">
+					<span class="out">退出</span>
+					<span class="nextpk">继续PK</span>
+				</div>
+			</div>
+		</div>
+
+	</body>
+
+</html>

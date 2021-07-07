@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+		<title>优惠券详情</title>
+		<link rel="stylesheet" href="../../../css/common.css" />
+		<link rel="stylesheet" href="../../../css/common_integral.css" />
+		<link rel="stylesheet" href="../../../lib/swiper/swiper.min.css" />
+		<style>
+			.info-wrap{
+				padding-bottom: 4rem;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="wrap info-wrap">
+			<div class="swiper-container banner">
+				<div class="swiper-wrapper">
+				    <div class="swiper-slide"><img src="../../../img/main/banner.png"></div>
+				    <div class="swiper-slide"><img src="../../../img/main/banner.png"></div>
+				</div>
+				<!-- 如果需要分页器 -->
+    			<div class="swiper-pagination"></div>
+			</div>
+			<div class="content">
+				<div class="name">
+					屋头串串50元优惠券
+				</div>
+				<div class="price">
+					<span class="oldprice">￥100</span>
+					<span class="newprice">￥9.9+200积分</span>
+				</div>
+				<div class="count">
+					<span>已售：<span>1</span></span>
+					<span>库存：<span>100</span></span>
+				</div>
+				<div class="infosbox">
+					<div class="infos">
+						<span>使用有效期：</span>
+						<span>2021.05.01至2021.05.31</span>
+					</div>
+					<div class="infos">
+						<span>使用时间：</span>
+						<span>11:00-22:00</span>
+					</div>
+					<div class="infos">
+						<span>使用范围：</span>
+						<span>仅适用菜品</span>
+					</div>
+					<div class="infos">
+						<span>使用规则：</span>
+						<span>该券仅在公众号内使用该券仅在公众号内使用该券仅在公众号内使用该券仅在公众号内使用该券仅在公众号内使用该券仅在公众号内使用</span>
+					</div>
+				</div>
+				<div class="tip">
+					数量：每日限购1次
+				</div>
+				<div class="infosboxtwo">
+					<div class="infos">
+						<span>适用门店：</span>
+						<span>该券仅在公众号内使用该券仅在公众号内使用该券仅在公众号内使用该券仅在公众号内使用该券仅在公众号内使用该券仅在公众号内使用</span>
+					</div>
+					<div class="address">
+						<img src="../../../img/integral/locate.png" /><span>郫都区</span>
+					</div>
+				</div>
+				<div class="maininfo">
+					<span class="maintip">商品信息</span>
+					<div class="infocontent">
+						<img src="../../../img/integral/img.png" />
+					</div>
+				</div>
+			</div>
+		    <div class="footbtn">
+				<div class="price">
+					<span>￥34.9</span>
+					<span class="oldprice">￥48.9</span>
+				</div>
+				<button class="paybtn" onclick="purchase()">立即支付</button>
+			</div>
+		</div>
+		<script type="text/javascript" src="../../../lib/swiper/swiper.min.js" ></script>
+		<script>
+			//顶部轮播图
+			var mySwiper = new Swiper ('.banner', {
+			    loop: false, // 循环模式选项
+			     // 如果需要分页器
+			    pagination: {
+			      el: '.swiper-pagination',
+			    },
+			}) 
+			function purchase(){
+				location.href='../result/result.html'
+			}
+		</script>
+	</body>
+</html>

@@ -1,0 +1,258 @@
+.wrap {
+	background: #FCFCFC;
+}
+
+.top {
+	background: url(../img/main/bg1.png) center no-repeat;
+	background-size: 100% 100%;
+}
+
+.search {
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	padding: 1.2rem 0.8rem 0.2rem 0.8rem;
+}
+
+.banner {
+	margin: 0.6rem 0.8rem;
+}
+
+.banner img {
+	width: 100%;
+}
+
+.address {
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	font-size: 0.8rem;
+	color: #fff;
+}
+
+.address img {
+	width: auto;
+}
+
+.search-input {
+	background: #fff;
+	border-radius: 0.8rem;
+	flex: 1;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	padding: 0.2rem 0.3rem;
+}
+
+.search-input input {
+	flex: 1;
+	font-size: 0.8rem;
+	color: #4c4c4c;
+}
+
+.btns {
+	background: #FF3232;
+	color: #fff;
+	font-size: 0.8rem;
+	padding: 0.4rem;
+	border-radius: 0.8rem;
+}
+
+.second {}
+
+.timecountbox {
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	font-size: .9rem;
+	color: #333;
+	padding: .3rem 0.8rem;
+}
+
+.timecount {
+	margin-left: 0.6rem;
+	font-size: .7rem;
+	border-radius: .2rem;
+	border: solid 1px #FF3232;
+}
+
+.timecount span {
+	color: #fff;
+	background: #FF3232;
+	padding: 0 .2rem;
+}
+
+.timecount .timer {
+	background: #fff;
+	color: #FF3232;
+}
+
+.couponbox {
+	margin-top: .6rem;
+	margin-left: .8rem;
+}
+
+.coupon {
+	padding: .35rem;
+	box-sizing: border-box;
+	background: url(../img/main/couponbg.png) center no-repeat;
+	background-size: 100% 100%;
+}
+
+.goodspic {
+	position: relative;
+}
+
+.goodspic img {
+	width: 100%;
+	height: 5rem;
+}
+
+.goodsname {
+	position: absolute;
+	bottom: -.5rem;
+	font-size: .8rem;
+	color: #333;
+	background: #fff;
+	border-radius: .4rem;
+	padding: .1rem .2rem;
+	left: 18%;
+	right: 18%;
+	text-align: center;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
+}
+
+.goodsprice {
+	font-size: .7rem;
+	color: #fff;
+	margin-top: 1rem;
+	margin-left: .5rem;
+}
+
+.goodsprice font {
+	font-size: 1.5rem;
+	margin-right: .2rem;
+}
+
+.couponprice {
+	color: #A22008;
+	background: linear-gradient(to right, #FBF5DD, #F3D07C);
+	margin: 1.6rem .8rem 0;
+	border-radius: .3rem;
+	padding: .1rem .3rem;
+	font-size: .7rem;
+}
+
+.couponprice font {
+	font-size: 1.2rem;
+	margin-right: .2rem;
+}
+
+.description {
+	font-size: .7rem;
+	color: #fff;
+	margin: .5rem;
+	word-break: break-all;
+	text-overflow: ellipsis;
+	overflow: hidden;
+	display: -webkit-box;
+	-webkit-line-clamp: 2;
+	-webkit-box-orient: vertical;
+	height: 1.7rem;
+}
+
+.third {
+	padding: .8rem;
+	font-size: .9rem;
+	color: #333
+}
+
+.preferbox {
+	font-size: .8rem;
+	margin-top: .8rem;
+}
+
+.prefer {
+	background: #fff;
+	border-radius: .4rem;
+	box-shadow: 0 0 .4rem #f5f5f5;
+	padding: .5rem;
+	box-sizing: border-box;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+	margin-top: .8rem;
+}
+
+.preferpic {
+	flex: 1;
+}
+
+.preferpic img {
+	width: 100%;
+	height: 5rem;
+	border-radius: .3rem;
+}
+
+.preferinfo {
+	flex: 3;
+	margin-left: .6rem;
+}
+
+.prefertitle {
+	display: flex;
+	display: -webkit-flex;
+	margin-top: .2rem;
+	align-items: center;
+}
+
+.names {
+	flex: 1;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: .9rem;
+}
+
+.distance {
+	margin-left: .3rem;
+	color: #AEAEAE;
+}
+
+.condition {
+	color: #AEAEAE;
+	margin-top: .3rem;
+}
+
+.infos {
+	margin-top: .6rem;
+	display: flex;
+	display: -webkit-flex;
+	align-items: center;
+}
+
+.infosprice {
+	flex: 1;
+	color: #FF3232;
+}
+
+.newprice {}
+
+.newprice font {
+	font-size: 1.1rem;
+}
+
+.oldprice {
+	margin: 0 .1rem;
+	color: #AEAEAE;
+	text-decoration: line-through;
+}
+
+.purchasebtn {
+	background: linear-gradient(to right, #FB5C59, #FC3339);
+	color: #fff;
+	padding: .6rem;
+	border-radius: .4rem;
+}
